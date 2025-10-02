@@ -1,23 +1,25 @@
+import './Cards.css'
+
 export default function Cards(props) {
 
-    const {actor} = props;
+    const { actor } = props;
 
     return (
         <div className="actor" >
-            <div className="actor-image">
-                <img src={actor.image} alt={actor.name} />
-            </div>
             <div>
+                <img src={actor.image} alt={actor.name} className="actor-image" />
+            </div>
+            <div className='actor-info'>
                 <h2>{actor.name}</h2>
                 <p>
-                    Anno nascita: {actor.birth_year}
+                    <strong>Anno nascita: </strong>{actor.birth_year}
                     {actor.death_year ? ` — ${actor.death_year}` : ""}
                 </p>
-                <p>Nazionalità: {actor.nationality}</p>
-                <p>Riconoscimenti: {actor.awards}</p>
-                <p>{actor.biography}</p>
+                <p><strong>Nazionalità: </strong>{actor.nationality}</p>
+                <p className='awards'><strong>Riconoscimenti: </strong>{actor.awards}</p>
+                <p className='bio'>{actor.biography}</p>
             </div>
-        </div>
+        </div >
     )
 
 }

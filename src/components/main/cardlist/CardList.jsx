@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import Cards from "./cards/Cards"
+import './CardList.css'
 
 export default function CardList() {
     const [actors, setActors] = useState([]);
